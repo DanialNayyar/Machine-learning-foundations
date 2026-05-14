@@ -125,7 +125,7 @@ A Power BI dashboard was developed to visualise the final results. The dashboard
 
 ### Page 1: Model Performance Overview
 
-![Model Performance Overview](dashboard/page_1.png)
+![Model Performance Overview](dashboard/Page1-ModelOverview.png)
 
 ### Page 2: Error Analysis
 
