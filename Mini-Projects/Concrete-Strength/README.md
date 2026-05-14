@@ -13,6 +13,15 @@ The goal was to build an end-to-end machine learning workflow, starting from dat
 **Relative MAE:** 7.75%
 
 
+## How to View This Project
+
+- The full modelling workflow is available in the notebook file.
+- The Power BI dashboard file is available in the `Dashboard` folder.
+- Dashboard screenshots are included in the README for quick viewing without opening Power BI.
+- Exported CSV files used for the dashboard are included in the data/exported results folder.
+
+
+
 ## Dataset
 The dataset was taken from the UCI Machine Learning Repository:
 (https://archive.ics.uci.edu/dataset/165/concrete+compressive+strength)
