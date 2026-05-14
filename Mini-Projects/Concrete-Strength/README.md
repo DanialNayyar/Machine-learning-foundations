@@ -83,23 +83,65 @@ The final model significantly outperformed the baseline models and the linear re
 
 ## Model Interpretation
 
+Permutation importance was used to determine the most important features for the final model. `Age` was the most important feature followed by water based ratios and binder related features. This agrees with the understanding of concrete engineering. Compressive strength is strongly affected by curing age and the balance between water and cement materials. 
+The top features after `Age` are `Water-Cement Ratio`, `Water-Binder Content Ratio`, and `Cement` as well.
 
 ## Error Analysis
+The final model's residuals were analused on the test set.
+
+Some key observations:
+- The actual vs predicted plot displayed a clear diagonal trend.
+- Residuals were generally centered around zero, i.e. the model's predictions were not severely overpredicted or underpredicted.
+- The largest errors wre inspected using important features i.e. age, water-binder ratio, water-cement ratio etc.
 
 ## Scenario Analysis
+Scenario analysis was performed to inspect how the final model might respond to chages in key input variables. Two scenarios were tested:
+1. Variation of curing age whilst the typical concrete mix is held constant.
+2. Variation of water content (recalculatig water-cement and water-binder content ratios)
+
+The behaviour seen agreed with concrete mix theory. The model predicted that that compressive strength increases with curing age and decreases with water content increasing.
+
+The plots do not constitute as direct proof but rather can be interpreted as model behaviour.
 
 ## Power BI Dashboard
 
-
+A Power BI dashboard was developed to visualise the final results. The dashboard includes:
+- Model performance overview
+- Final test metrics
+- Training vs Cross-Validation error comparison
+- Actual vs Predicted Values
+- Residual Error Distribution
+- Largest Prediction Errors
+- Feature Importance
+- Scenario Analysis
 
 ## Limitations
-
+This project did have some limitations that more than likely affected the final outcome.
+Some limitations include:
+- Small size of the dataset.
+- Identical mix designs have different target values, likely an experimental variation.
+- Feature engineering was performed before the final split. However, it should be noted that the engineered features were domain-informed and carried out row-wise.
+- The final model was evaluated on a test (held-out).
+- Scenario analysis showed model behaviour not proof.
 
 ## Future Work
+- Testing additional ensemble methods such XGBoost or LightGBM.
+- Streamlit app for interactive predictions.
+- Creating a stricter end-to-end pipeline where feature engineering is carried out within a custom transformer.
+- Compare model predictions against empirical concrete strength equations.
 
 ## Tools/Stack Used
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Scikit-Learn
+- SciPy
+- Power Bi
+- Google Colab
 
 ## Repo Structure
 
 
 ## Author
+Danial Nayyar
