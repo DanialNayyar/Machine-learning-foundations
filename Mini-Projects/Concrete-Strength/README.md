@@ -1,4 +1,4 @@
-# Concrete Compressive Strengvth Predicition
+# Concrete Compressive Strength Predicition
 
 ## Project Overview
 
