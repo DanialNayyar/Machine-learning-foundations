@@ -125,11 +125,11 @@ A Power BI dashboard was developed to visualise the final results. The dashboard
 
 ### Page 1: Model Performance Overview
 
-![Model Performance Overview](dashboard/Page1-ModelOverview.png)
+![Model Performance Overview](Dashboard/Page%201%20-%20Model%20Performance.png)
 
 ### Page 2: Error Analysis
 
-![Error Analysis](dashboard/page_2.png)
+![Error Analysis](Dashboard/Page%202%20-%20Error%20Analysis.png)
 
 ### Page 3: Feature Importance and Scenario Analysis
 
