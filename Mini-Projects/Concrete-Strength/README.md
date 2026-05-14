@@ -5,6 +5,14 @@
 This project aimed to predict the compressive strength of concrete using machine learning regression models. The dataset contained concrete mix design variables including cement, fly ash, blast furnace slag, water, superplasticizer, coarse aggregate, fine aggregate and curing age in days.
 The goal was to build an end-to-end machine learning workflow, starting from data inspection and exploratory data analysis to feature engineering, model development and comparison, hyperparameter tuning, final test evaluation, model interpretation and finally a Power Bi dashboard. 
 
+## Key Result
+
+**Best model:** Tuned HistGradientBoostingRegressor  
+**Final test RMSE:** 4.38 MPa  
+**Final test MAE:** 2.76 MPa  
+**Relative MAE:** 7.75%
+
+
 ## Dataset
 The dataset was taken from the UCI Machine Learning Repository:
 (https://archive.ics.uci.edu/dataset/165/concrete+compressive+strength)
@@ -114,6 +122,19 @@ A Power BI dashboard was developed to visualise the final results. The dashboard
 - Largest Prediction Errors
 - Feature Importance
 - Scenario Analysis
+
+### Page 1: Model Performance Overview
+
+![Model Performance Overview](dashboard/page_1.png)
+
+### Page 2: Error Analysis
+
+![Error Analysis](dashboard/page_2.png)
+
+### Page 3: Feature Importance and Scenario Analysis
+
+![Feature Importance and Scenario Analysis](dashboard/page_3.png)
+
 
 ## Limitations
 This project did have some limitations that more than likely affected the final outcome.
