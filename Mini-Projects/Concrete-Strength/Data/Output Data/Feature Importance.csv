@@ -1,0 +1,15 @@
+Feature,RMSE_Importance (avg),RMSE_Importance (std),MAE_Importance (avg),MAE_Importance (std)
+Age,10.251,0.446,8.351,0.373
+Water-Binder Content Ratio,5.358,0.333,4.472,0.312
+Water-Cement Ratio,2.696,0.381,2.283,0.254
+Binder Content,1.185,0.144,1.379,0.13
+Water,0.891,0.161,1.039,0.095
+Cement,0.528,0.118,0.688,0.086
+Fly Ash,0.52,0.159,0.608,0.081
+Blast Furnace Slag,0.464,0.052,0.541,0.061
+Fine Aggregate,0.37,0.083,0.579,0.055
+Coarse Aggregate,0.328,0.058,0.406,0.046
+Superplasticizer,0.191,0.071,0.283,0.054
+Superplasticizer-Binder Content Ratio,0.122,0.051,0.253,0.042
+Superplasticizer Present,0.0,0.0,0.0,0.0
+Log Age,0.0,0.0,0.0,0.0

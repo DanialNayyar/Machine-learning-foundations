@@ -1,0 +1,4 @@
+Model,TEST RMSE,TEST MAE,Relative RMSE (%),Relative MAE (%),RMSE Confidence Interval (Lower),RMSE Confidence Interval (Upper)
+Tuned HistGradientBoosting,"0    4.380856
+Name: Root Mean Squared Error, dtype: float64","0    2.756828
+Name: Mean Absolute Error, dtype: float64",12.310468124815872,7.746851237402484,3.36659064,5.20094848
