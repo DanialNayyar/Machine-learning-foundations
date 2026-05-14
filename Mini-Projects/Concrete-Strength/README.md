@@ -133,7 +133,7 @@ A Power BI dashboard was developed to visualise the final results. The dashboard
 
 ### Page 3: Feature Importance and Scenario Analysis
 
-![Feature Importance and Scenario Analysis](dashboard/page_3.png)
+![Feature Importance and Scenario Analysis](Dashboard/Page%203%20-%20Feature%20Importance%20and%20Scenario%20Analysis.png)
 
 
 ## Limitations
