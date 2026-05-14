@@ -58,6 +58,9 @@ The workflow followed is described below:
 14. Scenario and Sensitivity Analysis
 15. Power BI dashboard
 
+## Exploratory Data Analysis
+
+The EDA showed that the dataset contained nonlinear relationships, zero values, different feature scales and repeated experimental style measurements. These observations influenced the modelling approach. Baseline models were first created followed by linear models and then tree based models. Domain informed features were also created based on the EDA.
 
 ## Feature Engineering
 
