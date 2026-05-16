@@ -173,8 +173,14 @@ Some limitations include:
 - Power Bi
 - Google Colab
 
-## Repo Structure
-
-
 ## Author
 Danial Nayyar
+
+## Project Article
+
+Full writeup is available on Substack:
+
+https://danialnayyar.substack.com/p/concrete-strength-prediction
+
+
+
