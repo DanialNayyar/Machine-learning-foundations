@@ -295,4 +295,6 @@ Examples of extending this project.
 
 ## Parting Notes:
 
-This project had the purpose of me learning and implementing machine learning classification techniques in the context of cancer diagnosis. The notebook attached to this repo serves as both notes, writeup and ofcourse execution.
+This project was completed to strengthen my understanding of machine learning classification techniques and apply them within a context of cancer classification.
+
+The notebook in this repository represents a combined technical implementation, learning record and project write-up. It documents the entire workflow, from exploratory data analysis, comparison of models, hyperparameter tuning, final evaluation and model interpretation as well.
