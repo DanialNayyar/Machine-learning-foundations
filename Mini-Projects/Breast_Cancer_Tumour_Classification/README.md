@@ -158,19 +158,140 @@ Logistic Regression achieved the highest validation accuracy, precision, recall 
 
 
 
-
-
 ## Hyperparameter Tuning
+
+Due to the small search space, GridSearchCV was employed to tune the hyperparameters. The search space consisted of:
+- Regularlisation strength: C
+- Penalties: L1 and L2
+- Class weights: Standard and Balanced
+- Solvers: Liblinear and Saga
+
+The grid search used a 5 fold cross-validation and selected the model with the highest mean malignant recall.
+
+The winning configuration of hyperparameters for the Logistic Regression model consisted of:
+- C = 1
+- penalty = L1
+- class weight = balanced
+- solver = liblinear
+- max iterations = 10_000
+- random state = 42
+
 ### Effect of Tuning
+
+| Metric | Untuned Logistic Regression | Tuned Logistic Regression|
+|---|---|---|
+| Accuracy | 0.982 | 0.972 |
+| Precision | 1.000 | 0.962|
+| Recall | 0.953 | 0.966|
+| F1-score | 0.976 | 0.963|
+| ROC-AUC | 0.993| 0.993|
+
+Tuning increased malignant recall by about 1.3% (from 95.3% to 96.6%). Furthermore the number of false negatives also decreased (from seven to five) i.e. two more malignant tumors were correctly identified.
+
+As it is known, an increase in recall results in a decrease in precision. Which is known as the precision-recall trade off. The increase in recall meant that malignant tumors were correctly identified however it did introduce a reduction i accuracy, precision and F1-score. The improvement in recall introduced six false positives.
+
+
 ## Final Test Set Evaluation
+
+After the model was selected and tuning was complete, the final model was evaluated once on the unseen test set.
+
 ### Final Metrics
-### Final Confusion Matrixz
+
+| Metric | Test Set Score |
+|---|---:|
+| Accuracy | 0.982 |
+| Precision | 0.984|
+| Recall | 0.969 |
+| F1-Score | 0.976|
+| ROC - AUC | 0.998|
+
+### Final Confusion Matrix
+
+| Outcome | Count |
+|---|---:|
+| True Negatives | 106 |
+| False Positives | 1 |
+| False Negatives | 2 |
+| True Positives | 62|
+
+Out of the 171 test observations, 168 were correctly classified.
+
+Out of the 64 malignant tumours, 62 were identified correctly.
+
+Out of the 107 benign tumours, 106 were correctly identified
+
+The final test set recall was 96.9% which is slightly higher than the cross-validation mean recall of 96.6%. This indicates that the model generalised well on the unseen data as well.
+
+The ROC-AUC score of 0.998 shows that there was excellent separation between the predicted benign and malignant scores.
+
 ### Model Interpretation
+
+The final model used L1 regularlisation which can reduce coefficients to zero i.e. exclude coefficients that do not provide any additional predictive value relative to the rest of the features.
+
+Of the 30 features contained in the dataset:
+- 14 were reduced to a coefficient of zero
+- 16 kept non-zero coefficients
+
+Positive coefficients pushed predictions towards the malignant class whereas negative coeffeicients pushed predictions towards the benign class. It is important to note that the coefficients should be interpreted as relationships used by the model instead of the medical causation.
+
 ## Conclusion
+
+The project demonstrated that a classical machine learning model can achieve a strong performance on the breast cancer dataset.
+
+Logistic Regression outpeformed the SVC and Random Forest models during cross-validation. Recall focused hyperparameter tuning reduced the number of missed malignant samples whilst maintining an overall strong predicitive performance.
+
+
+| Test Set Metric | Score |
+|---|---:|
+| Accuracy | 98.2% |
+| Malignant Precision | 98.4% |
+| Malignant Recall | 96.9% |
+| F1- Score | 97.6 %|
+| ROC-AUC | 99.8%|
+
+In the final test, only two malignant tumors were incorrectly classified as benign in the final test set.
+
 ## Limitations
+It is important to note the several limitations in this project. Some are listed below.
+
+- Dataset size: The whole dataset contained only 569 samples
+- Final test set size: Was only 171 samples
+- No independent external dataset was used to validated the model
+- The default classification threshold was retained
+
+The strong performance should be interpreted as peformance on this specific dataset.
+
+
 ## Future Work
+
+Examples of extending this project.
+
+- Validating with an external dataset from a seperate source.
+- Comparison with additional classification algorithims
+- Development of a simple dashboard or interface for demonstration
+
 ## Tech Stack
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-Lean
+- Google Colab
+
 ## Machine Learning Methods
+- Logistic Regression
+- Support Vector Classification
+- Random Forest Classification
+- Standardisation
+- Pipelines
+- Stratified Train-Test splitting
+- Statified five fold cross-validation
+- Hyperparemeter tuning with GridSearchCV
+- Confusion Matrix Analysis
+  
+
+
 
 ## Parting Notes:
 
