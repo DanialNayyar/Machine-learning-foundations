@@ -105,10 +105,61 @@ StandardScaler was used and included within the Logistic Regression and SVC pipe
 No extra features were engineerd. The orignal dataset contained engineered measured extracted from images and additional feature engineering would have required substantial domain knowledge which is beyond the scope of this project.
 
 ## Model Development
+
+Models were evaluated using the cross-validation technique with 5 folds. The metrics recorded were:
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- ROC-AUC
+
+Recall was treated as the most important metric as it measured the proportion of malignant tumors identified correctly.
+
 ### Baseline - Logistic Regression
+
+The baseline Logistic Regression model achieved the strongest overall performance across the untuned models. The out-of-fold confusion matrix achieved
+
+| Outcome | Count |
+|---|---:|
+| True Negatives | 250 |
+| False Positives | 0 |
+| False Negatives | 7 |
+| True Positives | 141|
+
+The model was able to correctly identify 95.3% of malignant cases while producing no false positive predicitions.
+
 ### Support Vector Classifier
+
+The untuned SVC also achieved a strong performance but did perform slightly worse than the Logistic Regression baseline.
+
+It included a total of 11 errors with:
+- 3 false positives
+- 8 false negatives
+
+The untuned SVC missed a malignant case that the Logistic Regression baseline didn't.
+
+
 ### Random Forest Classifier
+
+The Random Forest model achieved perfect training scores but significnalty weaker validation performances. This indicated strong overfitting and this was evident through observing the confusion matrix which contained 12 false positives and 12 false negatives i.e. a total of 24 errors.
+
+As a result, Random Forest was not selected for further tuning
+
 ## Untuned Model Comparison
+
+
+| Model | Accuracy | Precision | Recall | F1-score | ROC-AUC|
+|---|---|---|---|---|---|
+| Logistic Regression | 0.982 | 1.000 | 0.953 | 0.976 | 0.993
+| Support Vector Classifier | 0.972 | 0.979 | 0.946 | 0.961 | 0.993
+| Random Forest  | 0.940 | 0.926 | 0.918 | 0.919 | 0.983
+
+Logistic Regression achieved the highest validation accuracy, precision, recall and F1-score. Hence why it was selected for hyperparameter tuning.
+
+
+
+
+
 ## Hyperparameter Tuning
 ### Effect of Tuning
 ## Final Test Set Evaluation
