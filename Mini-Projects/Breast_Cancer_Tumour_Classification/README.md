@@ -71,10 +71,39 @@ The data was split into two sets (Train and Test). This was done by using the st
 This was done before Exploratory Data Analysis (EDA) and as a result any EDA, model comparison and hyperparameter tuning was carried out on the training set. This ensured the test set remained unseen untill the final model had been chosen.
 
 ## Exploratory Data Analysis
+Exploratory data analysis was performed using the training set only.
+The analysis included:
+- Target class distribution
+- Descriptive Statistics
+- Feature Histograms
+- Correlation Analysis
+- Box plots
+- Pairwise Relationships
+- Skewness and Kurtosis Inspection
 
 
-## Findings
+### Findings
+
+Multiple size measurements showed strong correlations with the output diagnosis. Features that involved the raidii, perimenters and areas were the strongest features that were able to discriminate between malgnant and benign cases. Additionally, measurements like concavity also displayed strong relationships with malignancy.
+
+The correlation heatmap revelead siginficant multicollinearity. E.g.
+- Radius, perimeter and area measurements were related strongly.
+- Compactness and concavity measurements also correlated heavily.
+- Mean and Worst versions of measurements were also correlated.
+
+
+The distributions showed the difference in scale between features. As a result, standardisation was implemented to accomodate for scale sensititve models like Logistic Regression.
+
+It is important to note that no single feature was able to perfectly distinguish between malignant and bening tumors.
+
 ## Data Preprocessing
+
+No imputation was required, as mentioned above the dataset contained no missing values or any duplicates hence the only preprocessing required was scaling for scale sensitive models.
+
+StandardScaler was used and included within the Logistic Regression and SVC pipeline. This pipeline methodology was implemented to ensure that there was no data leakeage and any scaling parameters that were being learnt were from the relevant training folds during cross-validation.
+
+No extra features were engineerd. The orignal dataset contained engineered measured extracted from images and additional feature engineering would have required substantial domain knowledge which is beyond the scope of this project.
+
 ## Model Development
 ### Baseline - Logistic Regression
 ### Support Vector Classifier
